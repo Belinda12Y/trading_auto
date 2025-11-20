@@ -16,3 +16,9 @@ class BasePage:
 
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
+    
+    def clear(self, locator):
+        self.driver.find_element(*locator).clear()
+    
+    def get_attribute(self, locator, attribute_name):
+        return self.driver.find_element(*locator).get_attribute(attribute_name)
